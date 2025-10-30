@@ -13,7 +13,7 @@ function Header() {
   className="flex items-center gap-2 text-3xl font-semibold tracking-wide hover:text-black transition-colors"
 >
   <img src={logo} alt="Table Tracker Logo" width="60" />
-  <span>Table Tracker</span>
+  <span>ROYAL FEAST</span>
 </Link>
 
 
@@ -31,7 +31,7 @@ function Header() {
               >
                 Admin Login
               </Link>
-              <Link to="/employee-login" className="block text-[#8b5e3c] px-4 py-2 rounded-md hover:bg-orange-50"
+              <Link to="" className="block text-[#8b5e3c] px-4 py-2 rounded-md hover:bg-orange-50"
               >
                 Employee Login
               </Link>
