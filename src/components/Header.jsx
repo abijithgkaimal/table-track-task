@@ -6,13 +6,13 @@ function Header() {
 
   return (
     <header className="bg-[#a97b56] text-[#3b2a1e] shadow-md">
-      <div className="container mx-auto flex justify-between items-center px-6 py-4">
+      <div className="container mx-auto flex justify-between items-center">
         
       <Link
   to="/"
   className="flex items-center gap-2 text-3xl font-semibold tracking-wide hover:text-black transition-colors"
 >
-  <img src={logo} alt="Table Tracker Logo" width="60" />
+  <img src={logo} alt="Table Tracker Logo" width="90" />
   <span>ROYAL FEAST</span>
 </Link>
 

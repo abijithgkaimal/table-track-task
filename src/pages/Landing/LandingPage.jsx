@@ -7,8 +7,14 @@ function LandingPage() {
 
   return (
     <>
-      <div className="bg-[url('https://w0.peakpx.com/wallpaper/441/150/HD-wallpaper-gloss-cafe-cool-restaurant-design-luxury.jpg')] md:h-screen h-96 w-full bg-no-repeat bg-cover">
-        <div className="text-white flex justify-center flex-col items-center md:pt-60 pt-15">
+      {/* 1. Added relative to the container with the background image */}
+      <div className="bg-[url('https://w0.peakpx.com/wallpaper/441/150/HD-wallpaper-gloss-cafe-cool-restaurant-design-luxury.jpg')] md:h-screen h-96 w-full bg-no-repeat bg-cover relative">
+        
+        {/* 2. ADDED OVERLAY: absolute inset-0 bg-black/50 */}
+        <div className="absolute inset-0 bg-black/50"></div>
+
+        {/* 3. WRAPPED TEXT: Added relative and z-10 to ensure text is visible above the overlay */}
+        <div className="relative z-10 text-white flex justify-center flex-col items-center md:pt-60 pt-15">
           <h1 className="md:text-9xl text-5xl font-bold">ROYAL FEAST</h1>
           <p className="text-xl mt-5 text-center max-w-2xl">
             Where every meal is a masterpiece and every visit feels like home.
@@ -27,7 +33,7 @@ function LandingPage() {
         </div>
       </div>
 
-      <div className="pt-10 bg-gray-900">
+      <div className="bg-gray-900">
         <div className="md:grid grid-cols-2">
           <div className="flex justify-center flex-col items-center md:px-20 px-10">
             <h1 className="text-3xl mt-10 md:mt-0 text-white">OUR STORY</h1>

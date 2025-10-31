@@ -6,11 +6,10 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <footer className="bg-[#1c1c1c] text-gray-300">
-      {/* Newsletter Section */}
+    
       <div className="bg-[#a97b56]
- py-10 px-6 md:px-16 rounded-b-[2rem]">
+ py-10 px-6 md:px-16">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
-          {/* Image + Video Play Overlay */}
           <div className="relative w-full md:w-1/2">
             <img
               src="https://thumbs.dreamstime.com/b/fresh-raw-pork-neck-spices-wooden-board-closeup-ingredients-delicious-meat-meal-fresh-raw-pork-neck-spices-204583811.jpg"
@@ -20,7 +19,6 @@ function Footer() {
            
           </div>
 
-          {/* Newsletter Text + Form */}
           <div className="w-full md:w-1/2">
             <h4 className="text-orange-500 font-semibold text-lg mb-1">
               📰 Newsletters
@@ -70,7 +68,6 @@ function Footer() {
           </div>
         </div>
 
-        {/* Menus */}
         <div>
           <h4 className="text-white font-semibold mb-3">Our Menus</h4>
          <Link>
@@ -85,7 +82,6 @@ function Footer() {
          </Link>
         </div>
 
-        {/* Useful Links */}
         <div>
           <h4 className="text-white font-semibold mb-3">Useful Links</h4>
         <Link>
@@ -100,7 +96,6 @@ function Footer() {
         </Link>
         </div>
 
-        {/* Contact Info */}
         <div>
           <h4 className="text-white font-semibold mb-3">Contact Us</h4>
        <Link>
