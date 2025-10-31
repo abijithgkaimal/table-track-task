@@ -31,7 +31,7 @@ function Header() {
               >
                 Admin Login
               </Link>
-              <Link to="" className="block text-[#8b5e3c] px-4 py-2 rounded-md hover:bg-orange-50"
+              <Link to="/employee" className="block text-[#8b5e3c] px-4 py-2 rounded-md hover:bg-orange-50"
               >
                 Employee Login
               </Link>
