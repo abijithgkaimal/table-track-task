@@ -4,7 +4,7 @@ import PageNotFound from "./pages/Landing/PageNotFound";
 import AdminLogin from "./pages/Admin/AdminLogin";
 import AdminDetails from "./pages/Admin/AdminDetails";
 import EmployeeLanding from "./pages/Employee/EmployeeLanding";
-import EmpAccLogin from "./pages/Employee/EmpAccLogin";
+import EmployAccLogin from "./pages/Employee/EmployAccLogin";
 import EmpAccDashboard from "./pages/Employee/EmpAccDashboard";
 import EmpStaffLogin from "./pages/Employee/EmpStaffLogin";
 import EmpStaffDashboard from "./pages/Employee/EmpStaffDashboard";
@@ -25,7 +25,7 @@ function App() {
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin/details" element={<AdminDetails />} />
         <Route path="/employee" element={<EmployeeLanding />} />
-        <Route path="/employee/accounts/login" element={<EmpAccLogin />} />
+        <Route path="/employee/accounts/login" element={<EmployAccLogin />} />
         <Route path="/employee/accounts/dashboard" element={<EmpAccDashboard />} />
         <Route path="/employee/staff/login" element={<EmpStaffLogin />} />
         <Route path="/employee/staff/dashboard" element={<EmpStaffDashboard />} />
