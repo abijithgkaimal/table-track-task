@@ -17,7 +17,7 @@ function EmployeeLanding() {
                 maxWidth: 345,
                 borderRadius: 3,
                 boxShadow: 5,
-                backgroundColor: "#a97b56",  
+                backgroundColor: "#a97b56",
                 color: "#584131ff",
                 transition: "0.3s",
                 "&:hover": { transform: "scale(1.03)" },
@@ -35,6 +35,9 @@ function EmployeeLanding() {
                   variant="contained"
                   color="primary"
                   sx={{ mt: 2, textTransform: "none", borderRadius: 2 }}
+                  component="a"
+                  href="/employee/accounts/login"
+                  target="_blank"
                 >
                   Open Billing
                 </Button>
@@ -49,13 +52,13 @@ function EmployeeLanding() {
                 maxWidth: 345,
                 borderRadius: 3,
                 boxShadow: 5,
-                 backgroundColor: "#a97b56",  
+                backgroundColor: "#a97b56",
                 color: "#584131ff",
                 transition: "0.3s",
                 "&:hover": { transform: "scale(1.03)" },
               }}
             >
-            
+
               <CardContent>
                 <Typography variant="h6" gutterBottom className='text-center'>
                   Staff Management
