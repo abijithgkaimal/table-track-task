@@ -207,6 +207,132 @@
       "date": "2025-11-01",
       "status": "unpaid",
       "id": "ZBfAXQz"
+    },
+    {
+      "tableNo": "T2",
+      "chairs": [
+        "C5",
+        "C7",
+        "C8"
+      ],
+      "items": [
+        {
+          "id": "2",
+          "name": "MEAT BURGER",
+          "price": 140,
+          "image": "https://www.thedorsetmeatcompany.co.uk/theme-content/uploads/2018/05/kIVLTxgo.jpeg",
+          "category": "Burger",
+          "qty": 1
+        },
+        {
+          "id": "3",
+          "name": "PIZZA",
+          "price": 200,
+          "image": "https://www.honeywhatscooking.com/wp-content/uploads/2022/04/Tandoori-Vegetarian-Pizza1.jpg",
+          "category": "Pizza",
+          "qty": 1
+        },
+        {
+          "id": "4",
+          "name": "NOODLES",
+          "price": 150,
+          "image": "https://www.justspices.co.uk/media/recipe/Egg-Fried-Noodles_Just-Spices.webp",
+          "category": "Noodles",
+          "qty": 1
+        }
+      ],
+      "amount": "490",
+      "date": "2025-11-01",
+      "status": "unpaid",
+      "id": "yogCbF6"
+    },
+    {
+      "tableNo": "T2",
+      "chairs": [
+        "C5",
+        "C7",
+        "C8"
+      ],
+      "items": [
+        {
+          "id": "1",
+          "name": "VEG BURGER",
+          "price": 120,
+          "image": "https://www.vegrecipesofindia.com/wp-content/uploads/2020/12/burger-recipe-4.jpg",
+          "category": "Burger",
+          "qty": 1
+        },
+        {
+          "id": "2",
+          "name": "MEAT BURGER",
+          "price": 140,
+          "image": "https://www.thedorsetmeatcompany.co.uk/theme-content/uploads/2018/05/kIVLTxgo.jpeg",
+          "category": "Burger",
+          "qty": 3
+        }
+      ],
+      "amount": "540",
+      "date": "2025-11-01",
+      "status": "unpaid",
+      "id": "1gDyD1h"
+    },
+    {
+      "tableNo": "T3",
+      "chairs": [
+        "C12",
+        "C11"
+      ],
+      "items": [
+        {
+          "id": "2",
+          "name": "MEAT BURGER",
+          "price": 140,
+          "image": "https://www.thedorsetmeatcompany.co.uk/theme-content/uploads/2018/05/kIVLTxgo.jpeg",
+          "category": "Burger",
+          "qty": 1
+        },
+        {
+          "id": "3",
+          "name": "PIZZA",
+          "price": 200,
+          "image": "https://www.honeywhatscooking.com/wp-content/uploads/2022/04/Tandoori-Vegetarian-Pizza1.jpg",
+          "category": "Pizza",
+          "qty": 1
+        }
+      ],
+      "amount": "340",
+      "date": "2025-11-01",
+      "status": "unpaid",
+      "id": "a_9XwSo"
+    },
+    {
+      "tableNo": "T2",
+      "chairs": [
+        "C8",
+        "C7"
+      ],
+      "items": [
+        {
+          "id": "2",
+          "name": "MEAT BURGER",
+          "price": 140,
+          "image": "https://www.thedorsetmeatcompany.co.uk/theme-content/uploads/2018/05/kIVLTxgo.jpeg",
+          "category": "Burger",
+          "qty": 1
+        },
+        {
+          "id": "3",
+          "name": "PIZZA",
+          "price": 200,
+          "image": "https://www.honeywhatscooking.com/wp-content/uploads/2022/04/Tandoori-Vegetarian-Pizza1.jpg",
+          "category": "Pizza",
+          "qty": 1
+        }
+      ],
+      "amount": "340",
+      "date": "2025-11-01",
+      "status": "unpaid",
+      "id": "cJ26cfw"
     }
   ],
   "employees": [
@@ -216,6 +342,13 @@
       "username": "rahul@gmail.com",
       "password": "rahul",
       "id": "2"
+    },
+    {
+      "name": "dileep ",
+      "jobTitle": "accounts",
+      "username": "dileep@gmail.com",
+      "password": "dileep",
+      "id": "4TFI0fV"
     }
   ]
 }
