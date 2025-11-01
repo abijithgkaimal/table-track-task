@@ -363,6 +363,35 @@
       "date": "2025-11-01",
       "status": "unpaid",
       "id": "I1Tea6X"
+    },
+    {
+      "tableNo": "T2",
+      "chairs": [
+        "C8",
+        "C7"
+      ],
+      "items": [
+        {
+          "id": "2",
+          "name": "MEAT BURGER",
+          "price": 140,
+          "image": "https://www.thedorsetmeatcompany.co.uk/theme-content/uploads/2018/05/kIVLTxgo.jpeg",
+          "category": "Burger",
+          "qty": 1
+        },
+        {
+          "id": "3",
+          "name": "PIZZA",
+          "price": 200,
+          "image": "https://www.honeywhatscooking.com/wp-content/uploads/2022/04/Tandoori-Vegetarian-Pizza1.jpg",
+          "category": "Pizza",
+          "qty": 2
+        }
+      ],
+      "amount": "540",
+      "date": "2025-11-01",
+      "status": "unpaid",
+      "id": "6NuhmMI"
     }
   ],
   "employees": [
@@ -374,7 +403,7 @@
       "id": "2"
     },
     {
-      "name": "dileep ",
+      "name": "dileepp",
       "jobTitle": "accounts",
       "username": "dileep@gmail.com",
       "password": "dileep",

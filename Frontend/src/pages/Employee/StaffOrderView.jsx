@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button, Card, CardContent, Typography } from "@mui/material";
-import { getAllBillsAPI, updateBillStatusAPI } from "../../service/allAPI";
+import { getAllBillsAPI, updateBillAPI } from "../../service/allAPI";
 
 function StaffOrderView() {
   const [currentOrders, setCurrentOrders] = useState([]);
@@ -18,7 +18,7 @@ function StaffOrderView() {
   };
 
   const markAsCompleted = async (id) => {
-    await updateBillStatusAPI(id, { status: "paid" });
+await updateBillAPI(id, { status: "paid" });
     fetchOrders();
   };
 

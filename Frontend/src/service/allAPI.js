@@ -15,7 +15,10 @@ export const updateEmployeeAPI = async (id, data) => await commonAPI("PUT", `${B
 
 /*  TABLE APIs  */
 export const getAllTablesAPI = async () => await commonAPI("GET", `${BASE_URL}/tables`, "");
+export const addTableAPI = async (data) => await commonAPI("POST", `${BASE_URL}/tables`, data);
 export const updateTableAPI = async (id, data) => await commonAPI("PUT", `${BASE_URL}/tables/${id}`, data);
+export const deleteTableAPI = async (id) => await commonAPI("DELETE", `${BASE_URL}/tables/${id}`, {});
+
 
 /*  BILL APIs*/
 export const addBillAPI = async (data) => await commonAPI("POST", `${BASE_URL}/bills`, data);
