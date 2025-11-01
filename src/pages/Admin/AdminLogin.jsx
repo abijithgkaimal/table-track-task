@@ -16,7 +16,7 @@ export default function AdminLoginPage() {
   const checkpass = (e) => {
     e.preventDefault();
 
-    if (email === "Afsal_I" && password === "asdf") {
+    if (email === "Admin@gmail.com" && password === "asdf") {
       Swal.fire({
         icon: "success",
         title: "Login Successful",

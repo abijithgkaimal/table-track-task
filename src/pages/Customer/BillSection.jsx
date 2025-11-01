@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import api from "../../service/api";
+import { addBillAPI } from "../../service/allAPI"; // ✅ Use our API wrapper
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 
@@ -13,6 +13,7 @@ function BillSection() {
   const [selectedChairs, setSelectedChairs] = useState([]);
   const [billGenerated, setBillGenerated] = useState(false);
 
+  // ✅ Load booking and cart data from sessionStorage
   useEffect(() => {
     const storedCart = JSON.parse(sessionStorage.getItem("cart")) || [];
     const total = sessionStorage.getItem("totalAmount") || 0;
@@ -24,28 +25,32 @@ function BillSection() {
     setSelectedChairs(bookingData.chairs || []);
   }, []);
 
+  // ✅ Confirm & Save Bill to JSON Server
   const handleConfirmBill = async () => {
     try {
       const billData = {
-        type: "bill",
         tableNo: selectedTable?.tableNo || "N/A",
         chairs: selectedChairs,
+        items: cart,
         amount: totalAmount,
         date: new Date().toISOString().split("T")[0],
         status: "unpaid",
       };
 
-      await api.post("/", billData);
+      await addBillAPI(billData);
       setBillGenerated(true);
 
+      // Clear local session data
       sessionStorage.removeItem("cart");
       sessionStorage.removeItem("totalAmount");
       sessionStorage.removeItem("bookingData");
     } catch (error) {
       console.error("Error saving bill:", error);
+      alert("Failed to generate bill. Please try again!");
     }
   };
 
+  // ✅ Download PDF Bill
   const handleDownloadBill = () => {
     const doc = new jsPDF();
 
@@ -63,8 +68,8 @@ function BillSection() {
     const tableData = cart.map((item) => [
       item.name,
       item.qty,
-      `₹${item.price}`,
-      `₹${item.price * item.qty}`,
+      `RS  ${item.price}`,
+      `RS  ${item.price * item.qty}`,
     ]);
 
     doc.autoTable({
@@ -75,11 +80,12 @@ function BillSection() {
 
     const finalY = doc.lastAutoTable.finalY || 75;
     doc.setFontSize(14);
-    doc.text(`Grand Total: ₹${totalAmount}`, 14, finalY + 10);
+    doc.text(`Grand Total: RS  ${totalAmount}`, 14, finalY + 10);
 
     doc.save(`Bill_${selectedTable?.tableNo || "Table"}_${Date.now()}.pdf`);
   };
 
+  // ✅ Navigate back to menu
   const handleBackToMenu = () => {
     navigate("/customer/foodmenu");
   };
@@ -91,6 +97,7 @@ function BillSection() {
           BILLING
         </h1>
 
+        {/* ✅ Table Info */}
         <div className="text-center mb-6">
           {selectedTable?.tableNo ? (
             <>
@@ -109,6 +116,7 @@ function BillSection() {
           )}
         </div>
 
+        {/* ✅ Bill Table */}
         {cart.length > 0 ? (
           <>
             <table className="min-w-full border border-gray-200 rounded-lg text-left bg-white shadow">
@@ -134,6 +142,7 @@ function BillSection() {
               </tbody>
             </table>
 
+            {/* ✅ Total & Buttons */}
             <div className="flex flex-wrap justify-between items-center mt-8 gap-4">
               <h2 className="text-2xl font-bold text-gray-800">
                 Grand Total: ₹{totalAmount}

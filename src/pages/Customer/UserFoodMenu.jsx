@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import api from "../../service/api";
+import axios from "axios";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
@@ -9,10 +9,11 @@ function UserFoodMenu() {
   const [addedItem, setAddedItem] = useState(null); 
   const navigate = useNavigate();
 
+  // ✅ Fetch foods from JSON Server
   useEffect(() => {
     const fetchMenu = async () => {
       try {
-        const res = await api.get("?type=food");
+        const res = await axios.get("http://localhost:5001/foods");
         setMenu(res.data);
       } catch (err) {
         console.error("Error fetching menu:", err);
@@ -21,6 +22,7 @@ function UserFoodMenu() {
     fetchMenu();
   }, []);
 
+  // ✅ Add to Cart
   const handleAddToCart = (item) => {
     setCart((prev) => {
       const existing = prev.find((f) => f.name === item.name);
@@ -36,12 +38,15 @@ function UserFoodMenu() {
     setTimeout(() => setAddedItem(null), 1200);
   };
 
+  // ✅ Remove from Cart
   const handleRemove = (name) => {
     setCart((prev) => prev.filter((item) => item.name !== name));
   };
 
+  // ✅ Calculate Total
   const totalAmount = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
 
+  // ✅ Proceed to next page
   const handleProceed = () => {
     sessionStorage.setItem("cart", JSON.stringify(cart));
     sessionStorage.setItem("totalAmount", totalAmount);
@@ -55,11 +60,11 @@ function UserFoodMenu() {
         MENU
       </h1>
 
-
+      {/* Food Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {menu.map((item) => (
           <div
-            key={item.name}
+            key={item.id}
             className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300"
           >
             <img
@@ -97,6 +102,7 @@ function UserFoodMenu() {
         ))}
       </div>
 
+      {/* Cart Section */}
       <div className="mt-12 bg-white rounded-2xl shadow-lg p-6 max-w-4xl mx-auto">
         <h2 className="text-2xl font-bold mb-4 text-gray-800">🛒 Your Cart</h2>
 

@@ -16,27 +16,28 @@ function UserTableDetails() {
   const [selectedChairs, setSelectedChairs] = useState([]);
   const navigate = useNavigate();
 
-  const API_URL = "https://6903619fd0f10a340b23fbff.mockapi.io/data";
+  const API_URL = "http://localhost:5001/tables"; // ✅ JSON server endpoint
 
+  // ✅ Fetch tables from JSON Server
   useEffect(() => {
     axios
       .get(API_URL)
       .then((res) => {
-        const tableData = res.data.flat().filter((item) => item.type === "table");
-        setTables(tableData);
+        setTables(res.data);
       })
       .catch((err) => console.error("Error fetching tables:", err));
   }, []);
 
+  // ✅ Select a Table
   const handleTableSelect = (table) => {
-    if (selectedTable?.tableNo === table.tableNo) return; 
+    if (selectedTable?.tableNo === table.tableNo) return;
     setSelectedTable(table);
     setSelectedChairs([]);
   };
 
+  // ✅ Toggle chair selection (can select multiple)
   const handleChairToggle = (event, chairNo) => {
-    event.stopPropagation(); 
-
+    event.stopPropagation();
     setSelectedChairs((prev) =>
       prev.includes(chairNo)
         ? prev.filter((c) => c !== chairNo)
@@ -44,6 +45,7 @@ function UserTableDetails() {
     );
   };
 
+  // ✅ Proceed to Bill Page
   const handleProceed = () => {
     if (!selectedTable) {
       alert("Please select a table!");
@@ -60,6 +62,7 @@ function UserTableDetails() {
       chairs: selectedChairs,
     };
 
+    // Save in session for Bill Section
     sessionStorage.setItem("bookingData", JSON.stringify(bookingData));
     navigate("/customer/bill");
   };
@@ -70,11 +73,12 @@ function UserTableDetails() {
         BOOK YOUR SEATS
       </h1>
 
+      {/* ✅ Table Grid */}
       <div className="grid z-10 md:grid-cols-3 sm:grid-cols-2 gap-8 w-full max-w-6xl">
         {tables.map((table) => (
           <Card
-            key={table.tableNo}
-            className={`transition-all duration-500 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-xl hover:shadow-blue-400/10 border ${
+            key={table.id}
+            className={`transition-all duration-500 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-xl hover:shadow-blue-400/70 border ${
               selectedTable?.tableNo === table.tableNo
                 ? "border-4 border-blue-400"
                 : "border-gray-700"
@@ -95,6 +99,7 @@ function UserTableDetails() {
                 Status: {table.status}
               </Typography>
 
+              {/* ✅ Chair List */}
               <div className="flex flex-col gap-2 items-start">
                 {table.chairs.map((chair) => (
                   <FormControlLabel
@@ -133,6 +138,7 @@ function UserTableDetails() {
         ))}
       </div>
 
+      {/* ✅ Proceed Button */}
       {selectedTable && (
         <div className="mt-12">
           <Button

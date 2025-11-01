@@ -1,0 +1,193 @@
+{
+  "foods": [
+    {
+      "id": "1",
+      "name": "VEG BURGER",
+      "price": 120,
+      "image": "https://www.vegrecipesofindia.com/wp-content/uploads/2020/12/burger-recipe-4.jpg",
+      "category": "Burger"
+    },
+    {
+      "id": "2",
+      "name": "MEAT BURGER",
+      "price": 140,
+      "image": "https://www.thedorsetmeatcompany.co.uk/theme-content/uploads/2018/05/kIVLTxgo.jpeg",
+      "category": "Burger"
+    },
+    {
+      "id": "3",
+      "name": "PIZZA",
+      "price": 200,
+      "image": "https://www.honeywhatscooking.com/wp-content/uploads/2022/04/Tandoori-Vegetarian-Pizza1.jpg",
+      "category": "Pizza"
+    },
+    {
+      "id": "4",
+      "name": "NOODLES",
+      "price": 150,
+      "image": "https://www.justspices.co.uk/media/recipe/Egg-Fried-Noodles_Just-Spices.webp",
+      "category": "Noodles"
+    }
+  ],
+  "tables": [
+    {
+      "id": "1",
+      "tableNo": "T1",
+      "chairs": [
+        {
+          "chairNo": "C1",
+          "isBooked": false
+        },
+        {
+          "chairNo": "C2",
+          "isBooked": false
+        },
+        {
+          "chairNo": "C3",
+          "isBooked": true
+        },
+        {
+          "chairNo": "C4",
+          "isBooked": false
+        }
+      ],
+      "status": "available"
+    },
+    {
+      "id": "2",
+      "tableNo": "T2",
+      "chairs": [
+        {
+          "chairNo": "C5",
+          "isBooked": false
+        },
+        {
+          "chairNo": "C6",
+          "isBooked": true
+        },
+        {
+          "chairNo": "C7",
+          "isBooked": false
+        },
+        {
+          "chairNo": "C8",
+          "isBooked": false
+        }
+      ],
+      "status": "available"
+    },
+    {
+      "id": "3",
+      "tableNo": "T3",
+      "chairs": [
+        {
+          "chairNo": "C9",
+          "isBooked": false
+        },
+        {
+          "chairNo": "C10",
+          "isBooked": true
+        },
+        {
+          "chairNo": "C11",
+          "isBooked": false
+        },
+        {
+          "chairNo": "C12",
+          "isBooked": false
+        }
+      ],
+      "status": "available"
+    }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "tableNo": "T1",
+      "items": [
+        {
+          "name": "VEG BURGER",
+          "qty": 2,
+          "price": 120
+        }
+      ],
+      "totalAmount": 240,
+      "status": "pending",
+      "createdAt": "2025-10-30T12:00:00Z"
+    }
+  ],
+  "bills": [
+    {
+      "id": "1",
+      "orderId": 1,
+      "tableNo": "T1",
+      "amount": 240,
+      "date": "2025-10-30",
+      "status": "unpaid"
+    },
+    {
+      "id": "8e52",
+      "tableNo": "T2",
+      "chairs": [
+        "C5",
+        "C7",
+        "C8"
+      ],
+      "items": [
+        {
+          "id": "1",
+          "name": "VEG BURGER",
+          "price": 120,
+          "image": "https://www.vegrecipesofindia.com/wp-content/uploads/2020/12/burger-recipe-4.jpg",
+          "category": "Burger",
+          "qty": 2
+        },
+        {
+          "id": "2",
+          "name": "MEAT BURGER",
+          "price": 140,
+          "image": "https://www.thedorsetmeatcompany.co.uk/theme-content/uploads/2018/05/kIVLTxgo.jpeg",
+          "category": "Burger",
+          "qty": 1
+        },
+        {
+          "id": "3",
+          "name": "PIZZA",
+          "price": 200,
+          "image": "https://www.honeywhatscooking.com/wp-content/uploads/2022/04/Tandoori-Vegetarian-Pizza1.jpg",
+          "category": "Pizza",
+          "qty": 1
+        },
+        {
+          "id": "4",
+          "name": "NOODLES",
+          "price": 150,
+          "image": "https://www.justspices.co.uk/media/recipe/Egg-Fried-Noodles_Just-Spices.webp",
+          "category": "Noodles",
+          "qty": 1
+        }
+      ],
+      "amount": "730",
+      "date": "2025-11-01",
+      "status": "unpaid"
+    }
+  ],
+  "employees": [
+    {
+      "id": "1",
+      "name": "Rahul",
+      "role": "staff",
+      "email": "rahul@example.com",
+      "password": "pass123",
+      "approved": true
+    },
+    {
+      "id": "2",
+      "name": "Greeshma",
+      "role": "accounts",
+      "email": "greeshma@example.com",
+      "password": "pass123",
+      "approved": false
+    }
+  ]
+}
