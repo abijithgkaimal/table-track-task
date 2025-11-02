@@ -119,6 +119,24 @@ function StaffTableAndFoodManage() {
     }
   };
 
+  // ✅ Toggle chair booking status
+  const toggleChairStatus = async (tableId, chairIndex) => {
+    const table = tables.find((t) => t.id === tableId);
+    if (!table) return;
+
+    // Toggle chair booking
+    const updatedChairs = table.chairs.map((chair, index) =>
+      index === chairIndex
+        ? { ...chair, isBooked: !chair.isBooked }
+        : chair
+    );
+
+    const updatedTable = { ...table, chairs: updatedChairs };
+
+    await updateTableAPI(tableId, updatedTable);
+    fetchAllData();
+  };
+
   return (
     <div
       className="min-h-screen bg-cover bg-center p-10"
@@ -244,6 +262,29 @@ function StaffTableAndFoodManage() {
                   </h3>
                   <p>Status: {table.status}</p>
                   <p>Chairs: {table.chairs.length}</p>
+
+                  {/* ✅ Chair Status Display */}
+                  <div className="flex flex-wrap gap-2 mt-3">
+                    {table.chairs.map((chair, i) => (
+                      <Button
+                        key={i}
+                        variant="contained"
+                        size="small"
+                        onClick={() => toggleChairStatus(table.id, i)}
+                        sx={{
+                          backgroundColor: chair.isBooked ? "#d32f2f" : "#2e7d32",
+                          "&:hover": {
+                            backgroundColor: chair.isBooked
+                              ? "#b71c1c"
+                              : "#1b5e20",
+                          },
+                        }}
+                      >
+                        {chair.chairNo}
+                      </Button>
+                    ))}
+                  </div>
+
                   <div className="flex gap-2 mt-3">
                     <Button
                       variant="contained"

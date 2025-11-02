@@ -4,9 +4,9 @@ import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 function UserFoodMenu() {
-  const [menu, setMenu] = useState([]); 
-  const [cart, setCart] = useState([]); 
-  const [addedItem, setAddedItem] = useState(null); 
+  const [menu, setMenu] = useState([]);
+  const [cart, setCart] = useState([]);
+  const [addedItem, setAddedItem] = useState(null);
   const navigate = useNavigate();
 
   // ✅ Fetch foods from JSON Server
@@ -22,7 +22,7 @@ function UserFoodMenu() {
     fetchMenu();
   }, []);
 
-  // ✅ Add to Cart
+  // ✅ Add item to cart
   const handleAddToCart = (item) => {
     setCart((prev) => {
       const existing = prev.find((f) => f.name === item.name);
@@ -38,12 +38,23 @@ function UserFoodMenu() {
     setTimeout(() => setAddedItem(null), 1200);
   };
 
-  // ✅ Remove from Cart
+  // ✅ Decrease quantity
+  const handleDecreaseQty = (name) => {
+    setCart((prev) =>
+      prev
+        .map((item) =>
+          item.name === name ? { ...item, qty: item.qty - 1 } : item
+        )
+        .filter((item) => item.qty > 0) // remove only if qty = 0
+    );
+  };
+
+  // ✅ Remove entire item
   const handleRemove = (name) => {
     setCart((prev) => prev.filter((item) => item.name !== name));
   };
 
-  // ✅ Calculate Total
+  // ✅ Calculate total
   const totalAmount = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
 
   // ✅ Proceed to next page
@@ -54,8 +65,10 @@ function UserFoodMenu() {
   };
 
   return (
-    <div className="bg-[url('https://www.itl.cat/pngfile/big/99-996466_background-images-for-restaurants.jpg')] 
-                    min-h-screen w-full bg-no-repeat bg-cover p-6 pb-48">
+    <div
+      className="bg-[url('https://www.itl.cat/pngfile/big/99-996466_background-images-for-restaurants.jpg')]
+      min-h-screen w-full bg-no-repeat bg-cover p-6 pb-48"
+    >
       <h1 className="text-4xl font-bold text-center text-800 mb-10">
         MENU
       </h1>
@@ -115,7 +128,7 @@ function UserFoodMenu() {
                 <thead>
                   <tr className="border-b bg-gray-100">
                     <th className="p-3">Item</th>
-                    <th className="p-3">Qty</th>
+                    <th className="p-3 text-center">Qty</th>
                     <th className="p-3">Price</th>
                     <th className="p-3">Total</th>
                     <th className="p-3 text-center">Action</th>
@@ -125,14 +138,30 @@ function UserFoodMenu() {
                   {cart.map((item) => (
                     <tr key={item.name} className="border-b hover:bg-gray-50">
                       <td className="p-3">{item.name}</td>
-                      <td className="p-3">{item.qty}</td>
+                      <td className="p-3 text-center">
+                        <div className="flex justify-center items-center gap-2">
+                          <button
+                            className="bg-red-500 hover:bg-red-600 text-white px-2 py-1 rounded"
+                            onClick={() => handleDecreaseQty(item.name)}
+                          >
+                            −
+                          </button>
+                          <span className="font-semibold">{item.qty}</span>
+                          <button
+                            className="bg-green-500 hover:bg-green-600 text-white px-2 py-1 rounded"
+                            onClick={() => handleAddToCart(item)}
+                          >
+                            +
+                          </button>
+                        </div>
+                      </td>
                       <td className="p-3">₹{item.price}</td>
                       <td className="p-3 font-semibold">
                         ₹{item.qty * item.price}
                       </td>
                       <td className="p-3 text-center">
                         <button
-                          className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded transition"
+                          className="bg-gray-500 hover:bg-gray-600 text-white px-3 py-1 rounded transition"
                           onClick={() => handleRemove(item.name)}
                         >
                           Remove
