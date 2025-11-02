@@ -1,9 +1,9 @@
 import React from 'react';
 import { Card, CardContent, Typography, Grid, Button } from "@mui/material";
-import { useNavigate } from "react-router-dom"; // ✅ Import useNavigate
+import { useNavigate } from "react-router-dom";
 
 function EmployeeLanding() {
-  const navigate = useNavigate(); // ✅ Initialize navigate function
+  const navigate = useNavigate();
 
   return (
     <>
@@ -39,7 +39,7 @@ function EmployeeLanding() {
                   variant="contained"
                   color="primary"
                   sx={{ mt: 2, textTransform: "none", borderRadius: 2 }}
-                  onClick={() => navigate("/employee/accounts/login")} // ✅ navigate to EmpAccLogin.jsx
+                  onClick={() => navigate("/employee/accounts/login")}
                 >
                   Open Billing
                 </Button>
@@ -71,6 +71,7 @@ function EmployeeLanding() {
                   variant="contained"
                   color="secondary"
                   sx={{ mt: 2, textTransform: "none", borderRadius: 2 }}
+                  onClick={() => navigate("/employee/staff/login")} // ✅ Connect to staff login
                 >
                   Open Kitchen
                 </Button>
