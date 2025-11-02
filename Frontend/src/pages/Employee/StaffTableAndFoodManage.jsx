@@ -38,17 +38,17 @@ function StaffTableAndFoodManage() {
   // ✅ Food CRUD
   const handleAddFood = async () => {
     if (!foodInput.name || !foodInput.price) {
-      Swal.fire("⚠️ Missing Info", "Please enter all food details.", "warning");
+      Swal.fire("Missing Info", "Please enter all food details.", "warning");
       return;
     }
 
     if (editFoodId) {
       await updateFoodAPI(editFoodId, foodInput);
-      Swal.fire("✅ Updated", "Food item updated successfully!", "success");
+      Swal.fire("Updated", "Food item updated successfully!", "success");
       setEditFoodId(null);
     } else {
       await addFoodAPI(foodInput);
-      Swal.fire("🍔 Added", "New food item added successfully!", "success");
+      Swal.fire("Added", "New food item added successfully!", "success");
     }
 
     setFoodInput({ name: "", price: "", image: "" });
@@ -67,7 +67,7 @@ function StaffTableAndFoodManage() {
 
     if (confirm.isConfirmed) {
       await deleteFoodAPI(id);
-      Swal.fire("🗑️ Deleted!", "Food item has been removed.", "success");
+      Swal.fire("Deleted!", "Food item has been removed.", "success");
       fetchAllData();
     }
   };
@@ -75,7 +75,7 @@ function StaffTableAndFoodManage() {
   // ✅ Table CRUD
   const handleAddTable = async () => {
     if (!tableInput.tableNo || chairCount <= 0) {
-      Swal.fire("⚠️ Missing Info", "Enter table number and chair count.", "warning");
+      Swal.fire("Missing Info", "Enter table number and chair count.", "warning");
       return;
     }
 
@@ -90,11 +90,11 @@ function StaffTableAndFoodManage() {
 
     if (editTableId) {
       await updateTableAPI(editTableId, newTable);
-      Swal.fire("✅ Updated", "Table updated successfully!", "success");
+      Swal.fire("Updated", "Table updated successfully!", "success");
       setEditTableId(null);
     } else {
       await addTableAPI(newTable);
-      Swal.fire("🪑 Added", "New table added successfully!", "success");
+      Swal.fire("Added", "New table added successfully!", "success");
     }
 
     setTableInput({ tableNo: "", chairs: [] });
@@ -114,7 +114,7 @@ function StaffTableAndFoodManage() {
 
     if (confirm.isConfirmed) {
       await deleteTableAPI(id);
-      Swal.fire("🗑️ Deleted!", "Table has been removed.", "success");
+      Swal.fire("Deleted!", "Table has been removed.", "success");
       fetchAllData();
     }
   };
@@ -129,12 +129,12 @@ function StaffTableAndFoodManage() {
     >
       <div className="bg-black/70 p-8 rounded-3xl shadow-2xl">
         <h1 className="text-4xl font-bold mb-8 text-center text-yellow-400">
-          🛠️ Staff Control Panel
+          CONTROL PANEL
         </h1>
 
         {/* ================= Food Management ================= */}
         <section className="mb-12">
-          <h2 className="text-2xl mb-4 text-orange-400">🍔 Food Management</h2>
+          <h2 className="text-2xl mb-4 text-orange-400">FOOD MANAGEMENT</h2>
 
           <div className="flex flex-wrap gap-4 mb-6">
             <TextField
@@ -210,7 +210,7 @@ function StaffTableAndFoodManage() {
 
         {/* ================= Table Management ================= */}
         <section>
-          <h2 className="text-2xl mb-4 text-green-400">🪑 Table Management</h2>
+          <h2 className="text-2xl mb-4 text-green-400">TABLE MANAGEMENT</h2>
 
           <div className="flex flex-wrap gap-4 mb-6">
             <TextField

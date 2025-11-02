@@ -109,14 +109,9 @@ function EmpStaffLogin() {
 
         <div className="bg-white/85 backdrop-blur-lg rounded-3xl shadow-2xl overflow-hidden border border-amber-200/60">
           <div className="relative bg-gradient-to-r from-orange-500 to-amber-600 p-8 text-center overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-full opacity-10">
-              <div className="absolute top-4 left-10 text-6xl">🍳</div>
-              <div className="absolute top-12 right-8 text-4xl">👨‍🍳</div>
-              <div className="absolute bottom-8 left-8 text-5xl">🍕</div>
-            </div>
             <div className="relative z-10">
               <h1 className="text-4xl font-bold text-white drop-shadow-lg mb-2">
-                Staff Login 
+                STAFF LOGIN
               </h1>
               {/* <p className="text-amber-100 text-lg font-medium drop-shadow">
                
@@ -136,7 +131,7 @@ function EmpStaffLogin() {
                   value={formData.username}
                   onChange={handleChange}
                   className="block w-full px-4 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-300"
-                  placeholder="chef_username"
+                  placeholder="username"
                 />
               </div>
 
@@ -164,7 +159,7 @@ function EmpStaffLogin() {
                   : "hover:-translate-y-1"
               }`}
             >
-              {isLoading ? "Checking Credentials..." : "Access Kitchen Dashboard 🚀"}
+              {isLoading ? "Checking Credentials..." : "LOGIN"}
             </button>
           </form>
         </div>

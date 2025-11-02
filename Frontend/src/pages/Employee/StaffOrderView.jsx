@@ -65,14 +65,14 @@ function StaffOrderView() {
     >
       <div className="bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-2xl max-w-5xl mx-auto">
         <h1 className="text-3xl font-bold text-center text-amber-700 mb-6">
-          🍽️ Staff Order View
+          ORDERS LIST
         </h1>
 
         {orders.length > 0 ? (
           <table className="w-full border-collapse text-center shadow-lg rounded-lg overflow-hidden">
             <thead className="bg-amber-600 text-white">
               <tr>
-                <th className="py-3 px-4">Order ID</th>
+                <th className="py-3 px-4">No</th>
                 <th className="py-3 px-4">Table</th>
                 <th className="py-3 px-4">Items</th>
                 <th className="py-3 px-4">Total (₹)</th>
@@ -80,12 +80,13 @@ function StaffOrderView() {
               </tr>
             </thead>
             <tbody>
-              {orders.map((order) => (
+              {orders.map((order, index) => (
                 <tr
                   key={order.id}
                   className="bg-white/60 hover:bg-amber-100 transition-all duration-200"
                 >
-                  <td className="py-2 px-4 font-semibold">{order.id}</td>
+                  {/* ✅ Serial Number instead of random ID */}
+                  <td className="py-2 px-4 font-semibold">{index + 1}</td>
                   <td className="py-2 px-4">{order.tableNo || "N/A"}</td>
                   <td className="py-2 px-4">
                     {order.items
@@ -119,7 +120,7 @@ function StaffOrderView() {
             onClick={handleBack}
             className="bg-amber-600 hover:bg-amber-700 text-white font-semibold px-6 py-2 rounded-xl shadow-md transition-all"
           >
-            🔙 Back to Dashboard
+            Back to Dashboard
           </button>
         </div>
       </div>
