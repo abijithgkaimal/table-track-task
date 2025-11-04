@@ -35,7 +35,7 @@ function StaffTableAndFoodManage() {
     setTables(tRes.data || []);
   };
 
-  // ✅ Food CRUD
+  // ✅ FOOD CRUD
   const handleAddFood = async () => {
     if (!foodInput.name || !foodInput.price) {
       Swal.fire("Missing Info", "Please enter all food details.", "warning");
@@ -72,20 +72,36 @@ function StaffTableAndFoodManage() {
     }
   };
 
-  // ✅ Table CRUD
+  // ✅ TABLE CRUD with continuous chair numbering
   const handleAddTable = async () => {
     if (!tableInput.tableNo || chairCount <= 0) {
       Swal.fire("Missing Info", "Enter table number and chair count.", "warning");
       return;
     }
 
+    // ✅ Find the last chair number used so far
+    let lastChairNumber = 0;
+    tables.forEach((table) => {
+      if (table.chairs && table.chairs.length > 0) {
+        const lastChair = table.chairs[table.chairs.length - 1];
+        const match = lastChair.chairNo.match(/\d+$/); // extract trailing number
+        if (match) {
+          const num = parseInt(match[0]);
+          if (num > lastChairNumber) lastChairNumber = num;
+        }
+      }
+    });
+
+    // ✅ Create new chairs continuing the sequence
+    const newChairs = Array.from({ length: chairCount }, (_, i) => ({
+      chairNo: `Chair ${lastChairNumber + i + 1}`,
+      isBooked: false,
+    }));
+
     const newTable = {
       tableNo: tableInput.tableNo,
       status: "available",
-      chairs: Array.from({ length: chairCount }, (_, i) => ({
-        chairNo: `C${i + 1}`,
-        isBooked: false,
-      })),
+      chairs: newChairs,
     };
 
     if (editTableId) {
@@ -124,7 +140,6 @@ function StaffTableAndFoodManage() {
     const table = tables.find((t) => t.id === tableId);
     if (!table) return;
 
-    // Toggle chair booking
     const updatedChairs = table.chairs.map((chair, index) =>
       index === chairIndex
         ? { ...chair, isBooked: !chair.isBooked }
@@ -132,7 +147,6 @@ function StaffTableAndFoodManage() {
     );
 
     const updatedTable = { ...table, chairs: updatedChairs };
-
     await updateTableAPI(tableId, updatedTable);
     fetchAllData();
   };
@@ -263,7 +277,6 @@ function StaffTableAndFoodManage() {
                   <p>Status: {table.status}</p>
                   <p>Chairs: {table.chairs.length}</p>
 
-                  {/* ✅ Chair Status Display */}
                   <div className="flex flex-wrap gap-2 mt-3">
                     {table.chairs.map((chair, i) => (
                       <Button
