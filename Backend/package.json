@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "Table Tracker backend (JSON Server)",
+  "description": "JSON Server backend for Table Tracker",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
