@@ -1,10 +1,10 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "Table Tracker Backend (JSON Server)",
-  "main": "index.js",
+  "description": "Table Tracker backend (JSON Server)",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "json-server": "^1.0.0-beta.3"
