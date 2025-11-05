@@ -13,7 +13,7 @@ function UserFoodMenu() {
   useEffect(() => {
     const fetchMenu = async () => {
       try {
-        const res = await axios.get("https://table-track-task-2.onrender.com/foods");
+        const res = await axios.get("https://table-track.onrender.com/foods");
         setMenu(res.data);
       } catch (err) {
         console.error("Error fetching menu:", err);

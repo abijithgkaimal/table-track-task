@@ -16,7 +16,7 @@ function UserTableDetails() {
   const [selectedChairs, setSelectedChairs] = useState([]);
   const navigate = useNavigate();
 
-  const API_URL = "https://table-track-task-2.onrender.com/tables"; // ✅ JSON server endpoint
+  const API_URL = "https://table-track.onrender.com/tables"; // ✅ JSON server endpoint
 
   // ✅ Fetch tables from JSON Server
   useEffect(() => {
