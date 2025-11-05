@@ -19,7 +19,7 @@ TableTrackerServer.use(middleware);
 // use router
 TableTrackerServer.use(router);
 
-// tell server to listen client request
-TableTrackerServer.listen(PORT, () => {
+// tell server to listen on all network interfaces
+TableTrackerServer.listen(PORT, '0.0.0.0', () => {
   console.log(`Table Tracker JSON Server started at PORT number ${PORT}`);
 });

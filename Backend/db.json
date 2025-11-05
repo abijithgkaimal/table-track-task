@@ -1,0 +1,641 @@
+{
+  "foods": [
+    {
+      "id": "2",
+      "name": "MEAT BURGER",
+      "price": 140,
+      "image": "https://www.thedorsetmeatcompany.co.uk/theme-content/uploads/2018/05/kIVLTxgo.jpeg",
+      "category": "Burger"
+    },
+    {
+      "id": "4",
+      "name": "NOODLES",
+      "price": "200",
+      "image": "https://www.justspices.co.uk/media/recipe/Egg-Fried-Noodles_Just-Spices.webp",
+      "category": "Noodles"
+    }
+  ],
+  "tables": [
+    {
+      "tableNo": "T1",
+      "status": "available",
+      "chairs": [
+        {
+          "chairNo": "Chair 1",
+          "isBooked": true
+        },
+        {
+          "chairNo": "Chair 2",
+          "isBooked": true
+        },
+        {
+          "chairNo": "Chair 3",
+          "isBooked": false
+        },
+        {
+          "chairNo": "Chair 4",
+          "isBooked": false
+        }
+      ],
+      "id": 1
+    },
+    {
+      "tableNo": "T2",
+      "status": "available",
+      "chairs": [
+        {
+          "chairNo": "Chair 5",
+          "isBooked": true
+        },
+        {
+          "chairNo": "Chair 6",
+          "isBooked": false
+        },
+        {
+          "chairNo": "Chair 7",
+          "isBooked": false
+        },
+        {
+          "chairNo": "Chair 8",
+          "isBooked": false
+        }
+      ],
+      "id": 2
+    },
+    {
+      "tableNo": "T3",
+      "status": "available",
+      "chairs": [
+        {
+          "chairNo": "Chair 9",
+          "isBooked": true
+        },
+        {
+          "chairNo": "Chair 10",
+          "isBooked": true
+        },
+        {
+          "chairNo": "Chair 11",
+          "isBooked": false
+        },
+        {
+          "chairNo": "Chair 12",
+          "isBooked": false
+        }
+      ],
+      "id": 3
+    },
+    {
+      "tableNo": "T4",
+      "status": "available",
+      "chairs": [
+        {
+          "chairNo": "Chair 13",
+          "isBooked": true
+        },
+        {
+          "chairNo": "Chair 14",
+          "isBooked": true
+        },
+        {
+          "chairNo": "Chair 15",
+          "isBooked": false
+        },
+        {
+          "chairNo": "Chair 16",
+          "isBooked": false
+        }
+      ],
+      "id": 4
+    }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "tableNo": "T1",
+      "items": [
+        {
+          "name": "VEG BURGER",
+          "qty": 2,
+          "price": 120
+        }
+      ],
+      "totalAmount": 240,
+      "status": "pending",
+      "createdAt": "2025-10-30T12:00:00Z"
+    }
+  ],
+  "bills": [
+    {
+      "id": "1",
+      "orderId": 1,
+      "tableNo": "T1",
+      "amount": 240,
+      "date": "2025-10-30",
+      "status": "unpaid"
+    },
+    {
+      "id": "8e52",
+      "tableNo": "T2",
+      "chairs": [
+        "C5",
+        "C7",
+        "C8"
+      ],
+      "items": [
+        {
+          "id": "1",
+          "name": "VEG BURGER",
+          "price": 120,
+          "image": "https://www.vegrecipesofindia.com/wp-content/uploads/2020/12/burger-recipe-4.jpg",
+          "category": "Burger",
+          "qty": 2
+        },
+        {
+          "id": "2",
+          "name": "MEAT BURGER",
+          "price": 140,
+          "image": "https://www.thedorsetmeatcompany.co.uk/theme-content/uploads/2018/05/kIVLTxgo.jpeg",
+          "category": "Burger",
+          "qty": 1
+        },
+        {
+          "id": "3",
+          "name": "PIZZA",
+          "price": 200,
+          "image": "https://www.honeywhatscooking.com/wp-content/uploads/2022/04/Tandoori-Vegetarian-Pizza1.jpg",
+          "category": "Pizza",
+          "qty": 1
+        },
+        {
+          "id": "4",
+          "name": "NOODLES",
+          "price": 150,
+          "image": "https://www.justspices.co.uk/media/recipe/Egg-Fried-Noodles_Just-Spices.webp",
+          "category": "Noodles",
+          "qty": 1
+        }
+      ],
+      "amount": "730",
+      "date": "2025-11-01",
+      "status": "unpaid"
+    },
+    {
+      "tableNo": "T2",
+      "chairs": [
+        "C8",
+        "C7"
+      ],
+      "items": [
+        {
+          "id": "2",
+          "name": "MEAT BURGER",
+          "price": 140,
+          "image": "https://www.thedorsetmeatcompany.co.uk/theme-content/uploads/2018/05/kIVLTxgo.jpeg",
+          "category": "Burger",
+          "qty": 1
+        },
+        {
+          "id": "3",
+          "name": "PIZZA",
+          "price": 200,
+          "image": "https://www.honeywhatscooking.com/wp-content/uploads/2022/04/Tandoori-Vegetarian-Pizza1.jpg",
+          "category": "Pizza",
+          "qty": 1
+        },
+        {
+          "id": "4",
+          "name": "NOODLES",
+          "price": 150,
+          "image": "https://www.justspices.co.uk/media/recipe/Egg-Fried-Noodles_Just-Spices.webp",
+          "category": "Noodles",
+          "qty": 1
+        }
+      ],
+      "amount": "490",
+      "date": "2025-11-01",
+      "status": "unpaid",
+      "id": "ZBfAXQz"
+    },
+    {
+      "tableNo": "T2",
+      "chairs": [
+        "C5",
+        "C7",
+        "C8"
+      ],
+      "items": [
+        {
+          "id": "2",
+          "name": "MEAT BURGER",
+          "price": 140,
+          "image": "https://www.thedorsetmeatcompany.co.uk/theme-content/uploads/2018/05/kIVLTxgo.jpeg",
+          "category": "Burger",
+          "qty": 1
+        },
+        {
+          "id": "3",
+          "name": "PIZZA",
+          "price": 200,
+          "image": "https://www.honeywhatscooking.com/wp-content/uploads/2022/04/Tandoori-Vegetarian-Pizza1.jpg",
+          "category": "Pizza",
+          "qty": 1
+        },
+        {
+          "id": "4",
+          "name": "NOODLES",
+          "price": 150,
+          "image": "https://www.justspices.co.uk/media/recipe/Egg-Fried-Noodles_Just-Spices.webp",
+          "category": "Noodles",
+          "qty": 1
+        }
+      ],
+      "amount": "490",
+      "date": "2025-11-01",
+      "status": "unpaid",
+      "id": "yogCbF6"
+    },
+    {
+      "tableNo": "T2",
+      "chairs": [
+        "C5",
+        "C7",
+        "C8"
+      ],
+      "items": [
+        {
+          "id": "1",
+          "name": "VEG BURGER",
+          "price": 120,
+          "image": "https://www.vegrecipesofindia.com/wp-content/uploads/2020/12/burger-recipe-4.jpg",
+          "category": "Burger",
+          "qty": 1
+        },
+        {
+          "id": "2",
+          "name": "MEAT BURGER",
+          "price": 140,
+          "image": "https://www.thedorsetmeatcompany.co.uk/theme-content/uploads/2018/05/kIVLTxgo.jpeg",
+          "category": "Burger",
+          "qty": 3
+        }
+      ],
+      "amount": "540",
+      "date": "2025-11-01",
+      "status": "unpaid",
+      "id": "1gDyD1h"
+    },
+    {
+      "tableNo": "T3",
+      "chairs": [
+        "C12",
+        "C11"
+      ],
+      "items": [
+        {
+          "id": "2",
+          "name": "MEAT BURGER",
+          "price": 140,
+          "image": "https://www.thedorsetmeatcompany.co.uk/theme-content/uploads/2018/05/kIVLTxgo.jpeg",
+          "category": "Burger",
+          "qty": 1
+        },
+        {
+          "id": "3",
+          "name": "PIZZA",
+          "price": 200,
+          "image": "https://www.honeywhatscooking.com/wp-content/uploads/2022/04/Tandoori-Vegetarian-Pizza1.jpg",
+          "category": "Pizza",
+          "qty": 1
+        }
+      ],
+      "amount": "340",
+      "date": "2025-11-01",
+      "status": "unpaid",
+      "id": "a_9XwSo"
+    },
+    {
+      "tableNo": "T2",
+      "chairs": [
+        "C8",
+        "C7"
+      ],
+      "items": [
+        {
+          "id": "2",
+          "name": "MEAT BURGER",
+          "price": 140,
+          "image": "https://www.thedorsetmeatcompany.co.uk/theme-content/uploads/2018/05/kIVLTxgo.jpeg",
+          "category": "Burger",
+          "qty": 1
+        },
+        {
+          "id": "3",
+          "name": "PIZZA",
+          "price": 200,
+          "image": "https://www.honeywhatscooking.com/wp-content/uploads/2022/04/Tandoori-Vegetarian-Pizza1.jpg",
+          "category": "Pizza",
+          "qty": 1
+        }
+      ],
+      "amount": "340",
+      "date": "2025-11-01",
+      "status": "unpaid",
+      "id": "cJ26cfw"
+    },
+    {
+      "tableNo": "T1",
+      "chairs": [
+        "C1",
+        "C2",
+        "C4"
+      ],
+      "items": [
+        {
+          "id": "2",
+          "name": "MEAT BURGER",
+          "price": 140,
+          "image": "https://www.thedorsetmeatcompany.co.uk/theme-content/uploads/2018/05/kIVLTxgo.jpeg",
+          "category": "Burger",
+          "qty": 1
+        },
+        {
+          "id": "3",
+          "name": "PIZZA",
+          "price": 200,
+          "image": "https://www.honeywhatscooking.com/wp-content/uploads/2022/04/Tandoori-Vegetarian-Pizza1.jpg",
+          "category": "Pizza",
+          "qty": 2
+        }
+      ],
+      "amount": "540",
+      "date": "2025-11-01",
+      "status": "unpaid",
+      "id": "I1Tea6X"
+    },
+    {
+      "tableNo": "T2",
+      "chairs": [
+        "C8",
+        "C7"
+      ],
+      "items": [
+        {
+          "id": "2",
+          "name": "MEAT BURGER",
+          "price": 140,
+          "image": "https://www.thedorsetmeatcompany.co.uk/theme-content/uploads/2018/05/kIVLTxgo.jpeg",
+          "category": "Burger",
+          "qty": 1
+        },
+        {
+          "id": "3",
+          "name": "PIZZA",
+          "price": 200,
+          "image": "https://www.honeywhatscooking.com/wp-content/uploads/2022/04/Tandoori-Vegetarian-Pizza1.jpg",
+          "category": "Pizza",
+          "qty": 2
+        }
+      ],
+      "amount": "540",
+      "date": "2025-11-01",
+      "status": "unpaid",
+      "id": "6NuhmMI"
+    },
+    {
+      "tableNo": "T1",
+      "chairs": [
+        "C2",
+        "C1"
+      ],
+      "items": [
+        {
+          "id": "3",
+          "name": "PIZZA",
+          "price": 200,
+          "image": "https://www.honeywhatscooking.com/wp-content/uploads/2022/04/Tandoori-Vegetarian-Pizza1.jpg",
+          "category": "Pizza",
+          "qty": 2
+        }
+      ],
+      "amount": "400",
+      "date": "2025-11-02",
+      "status": "unpaid",
+      "id": "tkL78M2"
+    },
+    {
+      "tableNo": "T2",
+      "chairs": [
+        "C1"
+      ],
+      "items": [
+        {
+          "id": "2",
+          "name": "MEAT BURGER",
+          "price": 140,
+          "image": "https://www.thedorsetmeatcompany.co.uk/theme-content/uploads/2018/05/kIVLTxgo.jpeg",
+          "category": "Burger",
+          "qty": 1
+        },
+        {
+          "id": "1",
+          "name": "VEG BURGER",
+          "price": 120,
+          "image": "https://www.vegrecipesofindia.com/wp-content/uploads/2020/12/burger-recipe-4.jpg",
+          "category": "Burger",
+          "qty": 1
+        },
+        {
+          "id": "4",
+          "name": "NOODLES",
+          "price": 150,
+          "image": "https://www.justspices.co.uk/media/recipe/Egg-Fried-Noodles_Just-Spices.webp",
+          "category": "Noodles",
+          "qty": 1
+        }
+      ],
+      "amount": "410",
+      "date": "2025-11-02",
+      "status": "unpaid",
+      "id": "7Bsj_JL"
+    },
+    {
+      "tableNo": "T2",
+      "chairs": [
+        "C4",
+        "C1"
+      ],
+      "items": [
+        {
+          "id": "4",
+          "name": "NOODLES",
+          "price": 150,
+          "image": "https://www.justspices.co.uk/media/recipe/Egg-Fried-Noodles_Just-Spices.webp",
+          "category": "Noodles",
+          "qty": 5
+        },
+        {
+          "id": "2",
+          "name": "MEAT BURGER",
+          "price": 140,
+          "image": "https://www.thedorsetmeatcompany.co.uk/theme-content/uploads/2018/05/kIVLTxgo.jpeg",
+          "category": "Burger",
+          "qty": 1
+        }
+      ],
+      "amount": "890",
+      "date": "2025-11-02",
+      "status": "unpaid",
+      "id": "_ZsZCBw"
+    },
+    {
+      "tableNo": "T3",
+      "chairs": [
+        "C9",
+        "C11",
+        "C12"
+      ],
+      "items": [
+        {
+          "id": "1",
+          "name": "VEG BURGER",
+          "price": 120,
+          "image": "https://www.vegrecipesofindia.com/wp-content/uploads/2020/12/burger-recipe-4.jpg",
+          "category": "Burger",
+          "qty": 2
+        },
+        {
+          "id": "2",
+          "name": "MEAT BURGER",
+          "price": 140,
+          "image": "https://www.thedorsetmeatcompany.co.uk/theme-content/uploads/2018/05/kIVLTxgo.jpeg",
+          "category": "Burger",
+          "qty": 2
+        },
+        {
+          "id": "4",
+          "name": "NOODLES",
+          "price": 150,
+          "image": "https://www.justspices.co.uk/media/recipe/Egg-Fried-Noodles_Just-Spices.webp",
+          "category": "Noodles",
+          "qty": 2
+        }
+      ],
+      "amount": "820",
+      "date": "2025-11-04",
+      "status": "unpaid",
+      "id": "SJ0MdK1"
+    },
+    {
+      "tableNo": "T3",
+      "chairs": [
+        "C9",
+        "C12",
+        "C11"
+      ],
+      "items": [
+        {
+          "id": "2",
+          "name": "MEAT BURGER",
+          "price": 140,
+          "image": "https://www.thedorsetmeatcompany.co.uk/theme-content/uploads/2018/05/kIVLTxgo.jpeg",
+          "category": "Burger",
+          "qty": 1
+        },
+        {
+          "id": "4",
+          "name": "NOODLES",
+          "price": 150,
+          "image": "https://www.justspices.co.uk/media/recipe/Egg-Fried-Noodles_Just-Spices.webp",
+          "category": "Noodles",
+          "qty": 1
+        }
+      ],
+      "amount": "290",
+      "date": "2025-11-04",
+      "status": "unpaid",
+      "id": "4cTtXqU"
+    },
+    {
+      "tableNo": "T2",
+      "chairs": [
+        "Chair 5",
+        "Chair 8"
+      ],
+      "items": [
+        {
+          "id": "2",
+          "name": "MEAT BURGER",
+          "price": 140,
+          "image": "https://www.thedorsetmeatcompany.co.uk/theme-content/uploads/2018/05/kIVLTxgo.jpeg",
+          "category": "Burger",
+          "qty": 1
+        },
+        {
+          "id": "4",
+          "name": "NOODLES",
+          "price": 150,
+          "image": "https://www.justspices.co.uk/media/recipe/Egg-Fried-Noodles_Just-Spices.webp",
+          "category": "Noodles",
+          "qty": 3
+        }
+      ],
+      "amount": "590",
+      "date": "2025-11-05",
+      "status": "unpaid",
+      "id": "fkfO_Ru"
+    },
+    {
+      "tableNo": "T3",
+      "chairs": [
+        "Chair 11",
+        "Chair 12"
+      ],
+      "items": [
+        {
+          "id": "2",
+          "name": "MEAT BURGER",
+          "price": 140,
+          "image": "https://www.thedorsetmeatcompany.co.uk/theme-content/uploads/2018/05/kIVLTxgo.jpeg",
+          "category": "Burger",
+          "qty": 2
+        },
+        {
+          "id": "4",
+          "name": "NOODLES",
+          "price": 150,
+          "image": "https://www.justspices.co.uk/media/recipe/Egg-Fried-Noodles_Just-Spices.webp",
+          "category": "Noodles",
+          "qty": 1
+        }
+      ],
+      "amount": "430",
+      "date": "2025-11-05",
+      "status": "unpaid",
+      "id": "-tUEb8h"
+    }
+  ],
+  "employees": [
+    {
+      "name": "dileep",
+      "jobTitle": "accounts",
+      "username": "dileep@gmail.com",
+      "password": "dileep",
+      "id": "4TFI0fV"
+    },
+    {
+      "name": "greeshma",
+      "jobTitle": "accounts",
+      "username": "greeshma@gmail.com",
+      "password": "g123",
+      "id": "b7Akit2"
+    },
+    {
+      "name": "anu",
+      "jobTitle": "staff",
+      "username": "anu@gmail.com",
+      "password": "anu",
+      "id": "FZsYxwT"
+    }
+  ]
+}
