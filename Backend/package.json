@@ -1,11 +1,12 @@
 {
-  "name": "royalfeast-backend",
+  "name": "backend",
   "version": "1.0.0",
+  "description": "Table Tracker Backend (JSON Server)",
   "main": "index.js",
   "scripts": {
-    "start": "json-server --watch db.json --port 5001"
+    "start": "node index.js"
   },
   "dependencies": {
-  "json-server": "^0.17.4"
-}
+    "json-server": "^1.0.0-beta.3"
+  }
 }
